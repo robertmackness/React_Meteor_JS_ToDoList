@@ -3,6 +3,8 @@ Task = React.createClass({
   propTypes: {
     // This component gets the task to display through a React prop.
     // We can use propTypes to indicate it is required
+    // i.e. it requires a task object passed to it on creation
+    // see App.renderTasks()
     task: React.PropTypes.object.isRequired
   },
 
@@ -34,7 +36,8 @@ Task = React.createClass({
           onClick={this.toggleChecked} />
 
         <span className="text">
-          {this.props.task.text}
+          <strong>{this.props.task.username}</strong> : {this.props.task.text}
+
         </span>
         
         <button className="delete" onClick={this.deleteThisTask}>
